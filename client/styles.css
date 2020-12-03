@@ -1,0 +1,79 @@
+/*Technical Stuff*/
+.shown{
+    display: block;
+}
+.hidden{
+    display: none;
+}
+
+.column-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.left-column {
+    width: 100%;
+}
+
+.right-column {
+    width: 100%;
+}
+
+.item-left{
+    display: grid;
+    grid-template-areas:
+        'description button';
+    grid-template-columns: 70% 30%;
+}
+
+.item-right{
+    display: grid;
+    grid-template-areas:
+        'description button';
+    grid-template-columns: 70% 30%;
+}
+
+.description{
+    grid-area: description;
+}
+
+.delete{
+    grid-area: button;
+}
+
+.showButtonLeft{
+    display: none;
+}
+.showButtonRight{
+    display: block;
+}
+.hideButtonRight{
+    display: block;
+}
+.hideButtonLeft{
+    display: none;
+}
+
+@media screen and (min-width: 780px) {
+    .left-column {
+        width: 50%;
+    }
+    .right-column {
+        width: 50%;
+    }
+    .item-right{
+        display: grid;
+        grid-template-areas:
+            'delete description';
+        grid-template-columns: 30% 70%;
+    }
+
+    .showButtonLeft{
+        display: block;
+    }
+    .hideButtonRight{
+        display: none;
+    }
+}
