@@ -1,0 +1,67 @@
+<!--Page to display bucket list. 
+Default: Dynamically display bucket list items, button to edit list, completed items at the bottom?
+Bucket list item:
+      Check box, item
+Edit list: 
+      Dynamically display current list as forms with onchange 
+      methods which add the modified item to a list of items to update
+      serverside unless they are already on it. New items do not need 
+      this OnChange method. 
+
+      Button to add item. Items added are added to list to be added 
+      serverside.
+
+      Each list item, including added ones, should have a delete checkbox
+      next to it. Checked items are moved to the bottom of the list and 
+      crossed out. On submit, checked items are sorted. Preexisting items 
+      that are being deleted are added to a delete list and removed from 
+      all other lists that they might be on. Items added during this edit 
+      session are simply removed from all lists.
+Check Item:
+      Move item to the "completed" section?
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bucket List</title>
+    <meta name="description"
+        content="Nothing is more alive than buckets, so why not trust one to keep track of the things that make you feel alive?">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header></header>
+    <div id="displayer">
+        <div  class="column-container">
+            <div id="left-column" class="left-column">
+            </div>
+            <div id="right-column" class="right-column">
+            </div>
+        </div>
+        <button class="displayMode" onclick="edit()">Edit</button>
+    </div>
+    
+
+    <div id="editor" class="editMode">
+        <div class="column-container">
+            <div class="left-column">
+                <div id="left-column-edit"></div>
+                <button id="leftAddButton" onclick="addItem()" style="width: 100%">Add</button>
+            </div>
+            <div class="right-column">
+                <div id="right-column-edit"></div>
+                <button id="rightAddButton" onclick="addItem()" style="width: 100%">Add</button>
+            </div>
+        </div>
+        <button onclick="save()">Save</button>
+    </form>
+
+    <script src="bucketlist.js"></script>
+</body>
+
+</html>
